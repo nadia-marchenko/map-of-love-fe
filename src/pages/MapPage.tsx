@@ -48,6 +48,7 @@ const MapPage = () => {
       wrapper.style.width = '20px';
       wrapper.style.height = '20px';
       wrapper.style.cursor = 'pointer';
+      wrapper.setAttribute('data-park-id', park.id);
       // Don't set position: relative - Mapbox handles positioning
       
       // Create the actual marker circle, absolutely positioned within wrapper
@@ -81,13 +82,19 @@ const MapPage = () => {
         setSelectedLocation(park);
       });
 
-      // Add hover effect to inner element only
+      // Add hover effect to inner element only (only if not selected)
       wrapper.addEventListener('mouseenter', () => {
-        el.style.transform = 'scale(1.3)';
+        const isSelected = wrapper.getAttribute('data-selected') === 'true';
+        if (!isSelected) {
+          el.style.transform = 'scale(1.3)';
+        }
       });
 
       wrapper.addEventListener('mouseleave', () => {
-        el.style.transform = 'scale(1)';
+        const isSelected = wrapper.getAttribute('data-selected') === 'true';
+        if (!isSelected) {
+          el.style.transform = 'scale(1)';
+        }
       });
 
       markers.push(marker);
@@ -122,6 +129,34 @@ const MapPage = () => {
       }
     });
   }, [visitedLocations]);
+
+  // Update marker size when selected location changes
+  useEffect(() => {
+    if (!map.current || markersRef.current.length === 0) return;
+
+    parks.forEach((park, index) => {
+      const marker = markersRef.current[index];
+      if (marker) {
+        const wrapper = marker.getElement();
+        if (wrapper) {
+          const innerEl = wrapper.querySelector('.marker') as HTMLElement;
+          if (innerEl) {
+            const isSelected = selectedLocation && selectedLocation.id === park.id;
+            // Scale up selected marker, scale down others
+            if (isSelected) {
+              innerEl.style.transform = 'scale(2)';
+              innerEl.style.zIndex = '10';
+              wrapper.setAttribute('data-selected', 'true');
+            } else {
+              innerEl.style.transform = 'scale(1)';
+              innerEl.style.zIndex = '1';
+              wrapper.setAttribute('data-selected', 'false');
+            }
+          }
+        }
+      }
+    });
+  }, [selectedLocation]);
 
   const handleMarkAsVisited = (locationId: string, visitDate: string, notes?: string) => {
     updateVisitedLocation(locationId, {
