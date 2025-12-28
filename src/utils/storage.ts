@@ -115,12 +115,12 @@ export const updateChallenge = (challengeId: string, data: Partial<ChallengeStat
 // Get stats
 export const getStats = () => {
   const locations = getVisitedLocations();
-  const challenges = getChallenges();
+  const challengesData = getChallenges();
   
   const visitedCount = Object.values(locations).filter(loc => loc.visited).length;
   const totalParks = parks.length; // Use actual parks array length
-  const completedChallenges = Object.values(challenges).filter(ch => ch.completed).length;
-  const totalChallenges = challenges.length; // Use actual challenges array length
+  const completedChallenges = Object.values(challengesData).filter(ch => ch.completed).length;
+  const totalChallenges = Object.keys(challengesData).length; // Get count of challenge objects
   
   return {
     visitedParks: visitedCount,
