@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { getChallenges, updateChallenge } from '../utils/storage';
 import { ChallengesData } from '../types';
 import ChallengeCard from '../components/ChallengeCard';
-import { Filter, Trophy, Coffee } from 'lucide-react';
+import { Filter, Trophy, Navigation, Leaf, Building, Utensils } from 'lucide-react';
 
-type FilterType = 'all' | 'adventure' | 'everyday' | 'completed' | 'incomplete';
+type FilterType = 'all' | 'adventure' | 'navigation' | 'nature' | 'cultural' | 'local' | 'completed' | 'incomplete';
 
 const ChallengesPage = () => {
   const [challenges, setChallenges] = useState<ChallengesData>({});
@@ -38,7 +38,10 @@ const ChallengesPage = () => {
   const filteredChallenges = Object.entries(challenges).filter(([_id, challenge]) => {
     // Filter by category/completion
     if (filter === 'adventure' && challenge.category !== 'adventure') return false;
-    if (filter === 'everyday' && challenge.category !== 'everyday') return false;
+    if (filter === 'navigation' && challenge.category !== 'navigation') return false;
+    if (filter === 'nature' && challenge.category !== 'nature') return false;
+    if (filter === 'cultural' && challenge.category !== 'cultural') return false;
+    if (filter === 'local' && challenge.category !== 'local') return false;
     if (filter === 'completed' && !challenge.completed) return false;
     if (filter === 'incomplete' && challenge.completed) return false;
     
@@ -56,7 +59,10 @@ const ChallengesPage = () => {
   });
 
   const adventureChallenges = filteredChallenges.filter(([_, ch]) => ch.category === 'adventure');
-  const everydayChallenges = filteredChallenges.filter(([_, ch]) => ch.category === 'everyday');
+  const navigationChallenges = filteredChallenges.filter(([_, ch]) => ch.category === 'navigation');
+  const natureChallenges = filteredChallenges.filter(([_, ch]) => ch.category === 'nature');
+  const culturalChallenges = filteredChallenges.filter(([_, ch]) => ch.category === 'cultural');
+  const localChallenges = filteredChallenges.filter(([_, ch]) => ch.category === 'local');
   const completedCount = Object.values(challenges).filter(ch => ch.completed).length;
   const totalCount = Object.keys(challenges).length;
 
@@ -103,15 +109,48 @@ const ChallengesPage = () => {
             <span>Adventure</span>
           </button>
           <button
-            onClick={() => setFilter('everyday')}
+            onClick={() => setFilter('navigation')}
             className={`px-4 py-2 rounded-lg transition-smooth flex items-center space-x-1 ${
-              filter === 'everyday'
+              filter === 'navigation'
                 ? 'bg-forest-600 text-cream-50'
                 : 'bg-cream-100 text-earth-700 hover:bg-cream-200'
             }`}
           >
-            <Coffee className="w-4 h-4" />
-            <span>Everyday</span>
+            <Navigation className="w-4 h-4" />
+            <span>Navigation</span>
+          </button>
+          <button
+            onClick={() => setFilter('nature')}
+            className={`px-4 py-2 rounded-lg transition-smooth flex items-center space-x-1 ${
+              filter === 'nature'
+                ? 'bg-forest-600 text-cream-50'
+                : 'bg-cream-100 text-earth-700 hover:bg-cream-200'
+            }`}
+          >
+            <Leaf className="w-4 h-4" />
+            <span>Nature</span>
+          </button>
+          <button
+            onClick={() => setFilter('cultural')}
+            className={`px-4 py-2 rounded-lg transition-smooth flex items-center space-x-1 ${
+              filter === 'cultural'
+                ? 'bg-forest-600 text-cream-50'
+                : 'bg-cream-100 text-earth-700 hover:bg-cream-200'
+            }`}
+          >
+            <Building className="w-4 h-4" />
+            <span>Cultural</span>
+          </button>
+          <button
+            onClick={() => setFilter('local')}
+            className={`px-4 py-2 rounded-lg transition-smooth flex items-center space-x-1 ${
+              filter === 'local'
+                ? 'bg-forest-600 text-cream-50'
+                : 'bg-cream-100 text-earth-700 hover:bg-cream-200'
+            }`}
+          >
+            <Utensils className="w-4 h-4" />
+            <span>Local</span>
           </button>
           <button
             onClick={() => setFilter('completed')}
@@ -170,15 +209,78 @@ const ChallengesPage = () => {
           </section>
         )}
 
-        {/* Everyday Escapes */}
-        {everydayChallenges.length > 0 && (
+        {/* Navigation Challenges */}
+        {navigationChallenges.length > 0 && (
           <section>
             <div className="flex items-center space-x-2 mb-6">
-              <Coffee className="w-6 h-6 text-forest-600" />
-              <h2 className="text-2xl font-bold text-forest-800">Everyday Escapes</h2>
+              <Navigation className="w-6 h-6 text-forest-600" />
+              <h2 className="text-2xl font-bold text-forest-800">Navigation Challenges</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {everydayChallenges.map(([id, challenge]) => (
+              {navigationChallenges.map(([id, challenge]) => (
+                <ChallengeCard
+                  key={id}
+                  challengeId={id}
+                  challenge={challenge}
+                  onReveal={handleReveal}
+                  onComplete={handleComplete}
+                />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Nature Challenges */}
+        {natureChallenges.length > 0 && (
+          <section>
+            <div className="flex items-center space-x-2 mb-6">
+              <Leaf className="w-6 h-6 text-forest-600" />
+              <h2 className="text-2xl font-bold text-forest-800">Nature Challenges</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {natureChallenges.map(([id, challenge]) => (
+                <ChallengeCard
+                  key={id}
+                  challengeId={id}
+                  challenge={challenge}
+                  onReveal={handleReveal}
+                  onComplete={handleComplete}
+                />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Cultural Challenges */}
+        {culturalChallenges.length > 0 && (
+          <section>
+            <div className="flex items-center space-x-2 mb-6">
+              <Building className="w-6 h-6 text-forest-600" />
+              <h2 className="text-2xl font-bold text-forest-800">Cultural Challenges</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {culturalChallenges.map(([id, challenge]) => (
+                <ChallengeCard
+                  key={id}
+                  challengeId={id}
+                  challenge={challenge}
+                  onReveal={handleReveal}
+                  onComplete={handleComplete}
+                />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Local Challenges */}
+        {localChallenges.length > 0 && (
+          <section>
+            <div className="flex items-center space-x-2 mb-6">
+              <Utensils className="w-6 h-6 text-forest-600" />
+              <h2 className="text-2xl font-bold text-forest-800">Local Challenges</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {localChallenges.map(([id, challenge]) => (
                 <ChallengeCard
                   key={id}
                   challengeId={id}

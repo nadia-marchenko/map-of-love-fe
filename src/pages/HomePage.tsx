@@ -47,7 +47,7 @@ const HomePage = () => {
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {/* Map Card */}
             <Link
-              to="/"
+              to="/map"
               className="group bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-forest-500"
             >
               <div className="flex items-center space-x-4 mb-4">

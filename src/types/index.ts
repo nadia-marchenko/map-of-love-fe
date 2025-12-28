@@ -50,22 +50,26 @@ export interface Challenge {
   id: string;
   title: string;
   description: string;
-  category: 'adventure' | 'everyday';
+  category: 'adventure' | 'everyday' | 'navigation' | 'nature' | 'cultural' | 'local';
   location: string;
   distanceFromGdansk: number; // in km
+  time: string; // Estimated trip duration (e.g., "2-3 hours", "Full day")
+  tips: string; // Tips about when to do it (e.g., "Working day - open card after work", "Full day needed")
   image?: string; // URL or path to image
 }
 
 export interface ChallengeState {
   title: string;
   description: string;
-  category: 'adventure' | 'everyday';
+  category: 'adventure' | 'everyday' | 'navigation' | 'nature' | 'cultural' | 'local';
   location: string;
   revealed: boolean;
   completed: boolean;
   completionDate?: string;
   notes?: string;
   distanceFromGdansk: number;
+  time: string; // Estimated trip duration (e.g., "2-3 hours", "Full day")
+  tips: string; // Tips about when to do it (e.g., "Working day - open card after work", "Full day needed")
   image?: string; // URL or path to image
 }
 

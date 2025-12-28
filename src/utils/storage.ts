@@ -62,6 +62,8 @@ export const initializeChallenges = (): ChallengesData => {
       completionDate: undefined,
       notes: '',
       distanceFromGdansk: challenge.distanceFromGdansk,
+      time: challenge.time,
+      tips: challenge.tips,
       image: challenge.image,
     };
   });
@@ -84,10 +86,18 @@ export const getChallenges = (): ChallengesData => {
   }
   const challengesData = JSON.parse(stored);
   
-  // Merge images from source data for backward compatibility
+  // Merge new fields from source data for backward compatibility
   challenges.forEach(challenge => {
-    if (challengesData[challenge.id] && !challengesData[challenge.id].image) {
-      challengesData[challenge.id].image = challenge.image;
+    if (challengesData[challenge.id]) {
+      if (!challengesData[challenge.id].image) {
+        challengesData[challenge.id].image = challenge.image;
+      }
+      if (!challengesData[challenge.id].time) {
+        challengesData[challenge.id].time = challenge.time;
+      }
+      if (!challengesData[challenge.id].tips) {
+        challengesData[challenge.id].tips = challenge.tips;
+      }
     }
   });
   

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { ChallengeState } from '../types';
-import { MapPin, CheckCircle, Calendar, Sparkles } from 'lucide-react';
+import { MapPin, CheckCircle, Calendar, Sparkles, Clock, Lightbulb } from 'lucide-react';
 
 interface ChallengeCardProps {
   challengeId: string;
@@ -15,6 +15,7 @@ const ChallengeCard = ({ challengeId, challenge, onReveal, onComplete }: Challen
   const [showNotes, setShowNotes] = useState(false);
   const [notes, setNotes] = useState(challenge.notes || '');
   const [showCelebration, setShowCelebration] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
     if (challenge.completed && !showCelebration) {
@@ -142,6 +143,34 @@ const ChallengeCard = ({ challengeId, challenge, onReveal, onComplete }: Challen
         </div>
       )}
 
+      {/* Time Chip with Tooltip - positioned on scratch area */}
+      {!challenge.revealed && challenge.time && (
+        <div 
+          className="absolute top-4 right-4 z-20"
+          onMouseEnter={() => setShowTooltip(true)}
+          onMouseLeave={() => setShowTooltip(false)}
+        >
+          <div className="relative">
+            <div className="flex items-center space-x-1.5 px-3 py-1.5 bg-forest-600 text-cream-50 rounded-full shadow-lg cursor-pointer hover:bg-forest-700 transition-colors">
+              <Clock className="w-4 h-4" />
+              <span className="text-sm font-medium">{challenge.time}</span>
+            </div>
+            
+            {/* Tooltip */}
+            {showTooltip && challenge.tips && (
+              <div className="absolute top-full right-0 mt-2 w-64 p-3 bg-forest-800 text-cream-50 rounded-lg shadow-xl z-30">
+                <div className="flex items-start space-x-2">
+                  <Lightbulb className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm leading-relaxed">{challenge.tips}</p>
+                </div>
+                {/* Tooltip arrow */}
+                <div className="absolute -top-1 right-4 w-2 h-2 bg-forest-800 transform rotate-45"></div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* Card Content */}
       <div className={`${!challenge.revealed ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}>
         {challenge.image && (
@@ -169,6 +198,18 @@ const ChallengeCard = ({ challengeId, challenge, onReveal, onComplete }: Challen
             <div className="text-sm text-earth-600 mb-3">
               {challenge.distanceFromGdansk} km from Gdańsk
             </div>
+            {challenge.time && (
+              <div className="flex items-center space-x-2 text-sm text-forest-600 mb-2">
+                <Clock className="w-4 h-4" />
+                <span>{challenge.time}</span>
+              </div>
+            )}
+            {challenge.tips && (
+              <div className="flex items-start space-x-2 text-sm text-forest-700 mb-2 p-2 bg-forest-50 rounded-lg">
+                <Lightbulb className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <span>{challenge.tips}</span>
+              </div>
+            )}
           </div>
           {challenge.completed && (
             <CheckCircle className="w-6 h-6 text-gold-500 flex-shrink-0" />
