@@ -11,7 +11,6 @@ interface ChallengeCardProps {
 
 const ChallengeCard = ({ challengeId, challenge, onReveal, onComplete }: ChallengeCardProps) => {
   const [isScratching, setIsScratching] = useState(false);
-  const [scratchProgress, setScratchProgress] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [showNotes, setShowNotes] = useState(false);
   const [notes, setNotes] = useState(challenge.notes || '');
@@ -98,7 +97,6 @@ const ChallengeCard = ({ challengeId, challenge, onReveal, onComplete }: Challen
       if (pixels[i] === 0) transparentPixels++;
     }
     const progress = (transparentPixels / (pixels.length / 4)) * 100;
-    setScratchProgress(progress);
     
     // Auto-reveal if enough scratched
     if (progress > 30 && !challenge.revealed) {

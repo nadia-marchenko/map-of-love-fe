@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getChallenges, updateChallenge } from '../utils/storage';
-import { ChallengesData, ChallengeState } from '../types';
+import { ChallengesData } from '../types';
 import ChallengeCard from '../components/ChallengeCard';
 import { Filter, Trophy, Coffee } from 'lucide-react';
 
@@ -35,7 +35,7 @@ const ChallengesPage = () => {
     window.dispatchEvent(new Event('statsUpdated'));
   };
 
-  const filteredChallenges = Object.entries(challenges).filter(([id, challenge]) => {
+  const filteredChallenges = Object.entries(challenges).filter(([_id, challenge]) => {
     // Filter by category/completion
     if (filter === 'adventure' && challenge.category !== 'adventure') return false;
     if (filter === 'everyday' && challenge.category !== 'everyday') return false;

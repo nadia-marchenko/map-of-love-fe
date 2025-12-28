@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Map pin shape -->
+  <path d="M50 10 C35 10, 25 20, 25 40 C25 55, 50 85, 50 85 C50 85, 75 55, 75 40 C75 20, 65 10, 50 10 Z" fill="url(#grad)" stroke="#15803d" stroke-width="2"/>
+  <!-- Heart inside -->
+  <path d="M50 45 C45 40, 40 35, 40 30 C40 25, 45 20, 50 25 C55 20, 60 25, 60 30 C60 35, 55 40, 50 45 Z" fill="#fef3c7"/>
+</svg>
+
