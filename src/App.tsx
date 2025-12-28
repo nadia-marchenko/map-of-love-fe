@@ -6,8 +6,11 @@ import MapPage from './pages/MapPage';
 import ChallengesPage from './pages/ChallengesPage';
 
 function App() {
+  // Only use basename in production (GitHub Pages)
+  const basename = import.meta.env.PROD ? '/map-of-love-fe' : '';
+  
   return (
-    <BrowserRouter basename="/map-of-love-fe">
+    <BrowserRouter basename={basename}>
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
