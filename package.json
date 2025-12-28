@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Interactive map for tracking visited parks and locations in Poland with driving challenges",
   "private": true,
-  "homepage": "https://nadzeya.github.io/map-of-love-fe",
+  "homepage": "https://nadia-marchenko.github.io/map-of-love-fe",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
