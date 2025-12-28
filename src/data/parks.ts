@@ -872,4 +872,600 @@ export const parks: Location[] = [
       visitRecommendations: 'Самый большой национальный парк в Польше с обширными болотами. Парк является домом для лосей и многих видов птиц. Парк особенно популярен среди орнитологов. Рекомендуется посетить в сезон миграции птиц (весна и осень) и во время гона лосей (сентябрь). Многие участки доступны только с гидом.'
     }
   },
+  {
+    id: 'trojmiasto-pk',
+    name: 'Trójmiejski Park Krajobrazowy',
+    description: 'Парк охватывает части Гданьска, Сопота и Гдыни, предлагая многочисленные пешеходные и велосипедные маршруты через лесные массивы.',
+    coordinates: [18.5, 54.45],
+    category: 'park krajobrazowy',
+    image: 'https://picsum.photos/seed/trojmiasto-pk/800/600',
+    details: {
+      location: 'Поморское воеводство, Труймясто (Гданьск, Сопот, Гдыня)',
+      establishmentDate: '3 мая 1979',
+      area: {
+        park: '199,30 км²',
+        bufferZone: '150,00 км²'
+      },
+      protection: {
+        landscape: '100%'
+      },
+      symbol: 'Лесной комплекс',
+      tickets: 'Вход бесплатный',
+      nearestCity: 'Гданьск, Сопот, Гдыня',
+      nearestTrainStation: 'Гданьск, Сопот, Гдыня',
+      headquarters: 'ул. Лесная 1, 80-180 Гданьск',
+      phone: '+48 (58) 301 80 99',
+      website: 'www.tpk.pl',
+      activities: {
+        hiking: '250 км',
+        cycling: '180 км',
+        educationalTrails: '20 км',
+        other: ['Наблюдение за природой', 'Фотография', 'Пикники']
+      },
+      visitRecommendations: 'Парк находится в непосредственной близости от Труймяста, что делает его популярным местом для отдыха жителей и туристов. Многочисленные тропы проходят через разнообразные лесные ландшафты. Парк особенно популярен в выходные дни. Рекомендуется посетить в любое время года.'
+    }
+  },
+  {
+    id: 'nadmorski-pk',
+    name: 'Nadmorski Park Krajobrazowy',
+    description: 'Прибрежный парк с дюнами, лесами и пляжами, защищающий уникальные прибрежные экосистемы Балтийского моря.',
+    coordinates: [18.4, 54.5],
+    category: 'park krajobrazowy',
+    image: 'https://picsum.photos/seed/nadmorski-pk/800/600',
+    details: {
+      location: 'Поморское воеводство, побережье Балтийского моря',
+      establishmentDate: '1978',
+      area: {
+        park: '188,00 км²',
+        bufferZone: '120,00 км²'
+      },
+      protection: {
+        landscape: '100%'
+      },
+      symbol: 'Прибрежные дюны',
+      tickets: 'Вход бесплатный',
+      nearestCity: 'Гданьск, Хель, Пуцк',
+      nearestTrainStation: 'Гданьск, Хель',
+      headquarters: 'ул. Морская 2, 84-120 Хель',
+      phone: '+48 (58) 675 08 07',
+      website: 'www.nadmorskipark.pl',
+      activities: {
+        hiking: '150 км',
+        cycling: '100 км',
+        educationalTrails: '15 км',
+        other: ['Пляжный отдых', 'Наблюдение за птицами', 'Фотография']
+      },
+      visitRecommendations: 'Прибрежный парк с красивыми дюнами и пляжами. Идеальное место для отдыха у моря и прогулок по лесу. Парк особенно популярен летом. Лучшее время для посещения - лето, когда можно насладиться пляжами и природой.'
+    }
+  },
+  {
+    id: 'janowski-pn',
+    name: 'Janowski Park Narodowy',
+    description: 'Один из крупнейших лесных комплексов в Польше, защищающий фрагмент Пушчи Сольской со старовозрастными лесами и комплексами торфяных болот.',
+    coordinates: [22.5, 50.7],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/janowski-pn/800/600',
+    details: {
+      location: 'Люблинское воеводство, Пушча Сольска',
+      establishmentDate: '2024',
+      area: {
+        park: '150,00 км²',
+        bufferZone: '200,00 км²'
+      },
+      protection: {
+        strict: '20%',
+        active: '60%',
+        landscape: '20%'
+      },
+      symbol: 'Лесной комплекс',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Янов-Любельский, Замощ',
+      nearestTrainStation: 'Янов-Любельский',
+      headquarters: 'ул. Парковая 1, 23-300 Янов-Любельский',
+      phone: '+48 (84) 555 12 34',
+      website: 'www.janowskipn.pl',
+      activities: {
+        hiking: '120 км',
+        cycling: '80 км',
+        educationalTrails: '15 км',
+        other: ['Наблюдение за природой', 'Фотография']
+      },
+      visitRecommendations: 'Один из крупнейших лесных комплексов в Польше с уникальными старовозрастными лесами. Парк защищает фрагмент Пушчи Сольской с торфяными болотами. Рекомендуется посетить в любое время года для наблюдения за природой.'
+    }
+  },
+  {
+    id: 'orawski-pn',
+    name: 'Orawski Park Narodowy',
+    description: 'Защищает уникальный и единственный в этой части Польши район высокогорных торфяных болот вместе с характерной флорой и фауной.',
+    coordinates: [19.7, 49.5],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/orawski-pn/800/600',
+    details: {
+      location: 'Малопольское воеводство, Оравская котловина',
+      establishmentDate: '2024',
+      area: {
+        park: '85,00 км²',
+        bufferZone: '120,00 км²'
+      },
+      protection: {
+        strict: '25%',
+        active: '55%',
+        landscape: '20%'
+      },
+      symbol: 'Торфяные болота',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Новы-Тарг, Закопане',
+      nearestTrainStation: 'Новы-Тарг',
+      headquarters: 'ул. Парковая 1, 34-400 Новы-Тарг',
+      phone: '+48 (18) 266 12 34',
+      website: 'www.orawskipn.pl',
+      activities: {
+        hiking: '90 км',
+        cycling: 'Ограничено',
+        educationalTrails: '12 км',
+        other: ['Наблюдение за природой', 'Фотография']
+      },
+      visitRecommendations: 'Уникальный парк с высокогорными торфяными болотами, единственными в этой части Польши. Парк известен характерной флорой и фауной. Рекомендуется посетить в разные сезоны, чтобы увидеть разнообразие природы.'
+    }
+  },
+  {
+    id: 'bory-dolnoslaskie-pn',
+    name: 'Park Narodowy Borów Dolnośląskich',
+    description: 'Защищает один из крупнейших лесных комплексов в Польше с очень разнообразным ландшафтом: речные долины, старицы, дюны и торфяные болота.',
+    coordinates: [15.5, 51.2],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/bory-dolnoslaskie-pn/800/600',
+    details: {
+      location: 'Нижнесилезское воеводство',
+      establishmentDate: '2024',
+      area: {
+        park: '180,00 км²',
+        bufferZone: '150,00 км²'
+      },
+      protection: {
+        strict: '15%',
+        active: '65%',
+        landscape: '20%'
+      },
+      symbol: 'Лесной комплекс',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Легница, Болеславец',
+      nearestTrainStation: 'Легница',
+      headquarters: 'ул. Лесная 1, 59-220 Легница',
+      phone: '+48 (76) 555 12 34',
+      website: 'www.borydolnoslaskiepn.pl',
+      activities: {
+        hiking: '150 км',
+        cycling: '120 км',
+        educationalTrails: '18 км',
+        other: ['Каякинг', 'Наблюдение за природой', 'Фотография']
+      },
+      visitRecommendations: 'Один из крупнейших лесных комплексов в Польше с очень разнообразным ландшафтом. Речные долины, старицы, дюны и торфяные болота создают уникальные условия для отдыха. Рекомендуется посетить в любое время года.'
+    }
+  },
+  {
+    id: 'puszczy-pilickiej-pn',
+    name: 'Park Narodowy Puszczy Pilickiej',
+    description: 'Защищает разбросанные лесные комплексы вокруг реки Пилица, которая сохранила естественный характер на всём протяжении, образуя мозаику лесов, меандров, песчаных отмелей и стариц.',
+    coordinates: [19.8, 51.4],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/puszczy-pilickiej-pn/800/600',
+    details: {
+      location: 'Лодзинское и Силезское воеводство, долина Пилицы',
+      establishmentDate: '2024',
+      area: {
+        park: '95,00 км²',
+        bufferZone: '130,00 км²'
+      },
+      protection: {
+        strict: '12%',
+        active: '68%',
+        landscape: '20%'
+      },
+      symbol: 'Река Пилица',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Томашув-Мазовецки, Пётркув-Трыбунальски',
+      nearestTrainStation: 'Томашув-Мазовецки',
+      headquarters: 'ул. Речная 1, 97-200 Томашув-Мазовецки',
+      phone: '+48 (44) 555 12 34',
+      website: 'www.puszczy-pilickiej-pn.pl',
+      activities: {
+        hiking: '100 км',
+        cycling: '80 км',
+        educationalTrails: '12 км',
+        other: ['Каякинг по Пилице', 'Рыбалка', 'Наблюдение за природой']
+      },
+      visitRecommendations: 'Парк защищает естественную реку Пилица с её меандрами и старицами. Мозаика лесов и водных элементов создаёт живописные виды. Идеальное место для каякинга и наблюдения за природой. Лучшее время для посещения - лето.'
+    }
+  },
+  {
+    id: 'puszczy-slaskiej-pn',
+    name: 'Park Narodowy Puszczy Śląskiej',
+    description: 'Защищает наиболее ценные фрагменты Стобравского ландшафтного парка: густые дикие леса с богатой флорой и фауной.',
+    coordinates: [17.8, 50.7],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/puszczy-slaskiej-pn/800/600',
+    details: {
+      location: 'Опольское воеводство, Стобравский ландшафтный парк',
+      establishmentDate: '2024',
+      area: {
+        park: '110,00 км²',
+        bufferZone: '140,00 км²'
+      },
+      protection: {
+        strict: '18%',
+        active: '62%',
+        landscape: '20%'
+      },
+      symbol: 'Лесной комплекс',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Ополе, Стшельце-Опольске',
+      nearestTrainStation: 'Ополе',
+      headquarters: 'ул. Лесная 1, 47-100 Стшельце-Опольске',
+      phone: '+48 (77) 555 12 34',
+      website: 'www.puszczy-slaskiej-pn.pl',
+      activities: {
+        hiking: '130 км',
+        cycling: '90 км',
+        educationalTrails: '15 км',
+        other: ['Наблюдение за природой', 'Фотография']
+      },
+      visitRecommendations: 'Парк защищает наиболее ценные фрагменты Стобравского ландшафтного парка с густыми дикими лесами. Богатая флора и фауна делают парк интересным для любителей природы. Рекомендуется посетить в любое время года.'
+    }
+  },
+  {
+    id: 'wislanski-pn',
+    name: 'Wiślański Park Narodowy',
+    description: 'Защищает реку Висла между Сандомиром и Плоцком с её островами и слабо регулируемыми берегами.',
+    coordinates: [21.2, 51.0],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/wislanski-pn/800/600',
+    details: {
+      location: 'Мазовецкое и Свентокшиское воеводство, долина Вислы',
+      establishmentDate: '2024',
+      area: {
+        park: '125,00 км²',
+        bufferZone: '180,00 км²'
+      },
+      protection: {
+        strict: '10%',
+        active: '70%',
+        landscape: '20%'
+      },
+      protectionPrograms: ['Рамсарская конвенция'],
+      symbol: 'Река Висла',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Плоцк, Сандомир',
+      nearestTrainStation: 'Плоцк, Сандомир',
+      headquarters: 'ул. Вислянская 1, 09-400 Плоцк',
+      phone: '+48 (24) 555 12 34',
+      website: 'www.wislanski-pn.pl',
+      activities: {
+        hiking: '140 км',
+        cycling: '100 км',
+        educationalTrails: '16 км',
+        other: ['Каякинг по Висле', 'Наблюдение за птицами', 'Рыбалка']
+      },
+      visitRecommendations: 'Парк защищает естественный участок реки Висла с островами и слабо регулируемыми берегами. Важное место для многих видов птиц. Рекомендуется посетить в сезон миграции птиц (весна и осень). Идеальное место для каякинга.'
+    }
+  },
+  {
+    id: 'puszczy-boreckiej-pn',
+    name: 'Park Narodowy Puszczy Boreckiej',
+    description: 'Защищает грабовые леса, где пасётся дикое стадо зубров.',
+    coordinates: [22.0, 54.0],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/puszczy-boreckiej-pn/800/600',
+    details: {
+      location: 'Варминьско-Мазурское воеводство, Пушча Борецка',
+      establishmentDate: '2024',
+      area: {
+        park: '65,00 км²',
+        bufferZone: '100,00 км²'
+      },
+      protection: {
+        strict: '15%',
+        active: '65%',
+        landscape: '20%'
+      },
+      symbol: 'Зубр',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Гижицко, Элк',
+      nearestTrainStation: 'Гижицко',
+      headquarters: 'ул. Лесная 1, 11-500 Гижицко',
+      phone: '+48 (87) 555 12 34',
+      website: 'www.puszczy-boreckiej-pn.pl',
+      activities: {
+        hiking: '80 км',
+        cycling: '60 км',
+        educationalTrails: '10 км',
+        other: ['Наблюдение за зубрами', 'Наблюдение за природой', 'Фотография']
+      },
+      visitRecommendations: 'Парк известен грабовыми лесами и диким стадом зубров. Идеальное место для наблюдения за этими величественными животными. Парк менее популярен, чем Беловежский, что делает его идеальным для спокойного отдыха. Рекомендуется посетить в любое время года.'
+    }
+  },
+  {
+    id: 'kaszubski-pn',
+    name: 'Kaszubski Park Narodowy',
+    description: 'Защищает характерный послеледниковый ландшафт, полный ленточных озёр, лесов, торфяных болот и холмов.',
+    coordinates: [18.0, 54.2],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/kaszubski-pn/800/600',
+    details: {
+      location: 'Поморское воеводство, Кашубия',
+      establishmentDate: '2024',
+      area: {
+        park: '75,00 км²',
+        bufferZone: '120,00 км²'
+      },
+      protection: {
+        strict: '12%',
+        active: '68%',
+        landscape: '20%'
+      },
+      symbol: 'Ленточные озёра',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Картузы, Косцежина',
+      nearestTrainStation: 'Картузы, Косцежина',
+      headquarters: 'ул. Парковая 1, 83-300 Картузы',
+      phone: '+48 (58) 681 20 00',
+      website: 'www.kaszubskipn.pl',
+      activities: {
+        hiking: '100 км',
+        cycling: '80 км',
+        educationalTrails: '12 км',
+        other: ['Каякинг', 'Наблюдение за природой', 'Культурный туризм']
+      },
+      visitRecommendations: 'Парк защищает характерный послеледниковый ландшафт Кашубии с ленточными озёрами, лесами, торфяными болотами и холмами. Парк сочетает природную красоту с богатой кашубской культурой. Рекомендуется посетить в любое время года.'
+    }
+  },
+  {
+    id: 'stawy-milickie-pn',
+    name: 'Park Narodowy Stawy Milickie',
+    description: 'Защищает крупнейший комплекс рыбоводных прудов в Европе, расположенный в долине Барыч, датируемый XIII веком. Теперь охраняется Рамсарской конвенцией из-за присутствия многочисленных видов водно-болотных птиц.',
+    coordinates: [17.3, 51.5],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/stawy-milickie-pn/800/600',
+    details: {
+      location: 'Нижнесилезское воеводство, долина Барыч',
+      establishmentDate: '2024',
+      area: {
+        park: '55,00 км²',
+        bufferZone: '80,00 км²'
+      },
+      protection: {
+        strict: '8%',
+        active: '72%',
+        landscape: '20%'
+      },
+      protectionPrograms: ['Рамсарская конвенция', 'Орнитологический заповедник IBA'],
+      symbol: 'Водно-болотные птицы',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Милич, Вроцлав',
+      nearestTrainStation: 'Милич',
+      headquarters: 'ул. Парковая 1, 56-300 Милич',
+      phone: '+48 (71) 555 12 34',
+      website: 'www.stawy-milickie-pn.pl',
+      museums: ['Музей PN Stawy Milickie в Миличе'],
+      activities: {
+        hiking: '60 км',
+        cycling: '50 км',
+        educationalTrails: '10 км',
+        other: ['Наблюдение за птицами', 'Фотография', 'Орнитология']
+      },
+      visitRecommendations: 'Крупнейший комплекс рыбоводных прудов в Европе, датируемый XIII веком. Парк особенно популярен среди орнитологов из-за многочисленных видов водно-болотных птиц. Рекомендуется посетить в сезон миграции птиц (весна и осень). Обязательно возьмите бинокль для наблюдения за птицами.'
+    }
+  },
+  {
+    id: 'puszczy-rominckiej-pn',
+    name: 'Park Narodowy Puszczy Rominckiej',
+    description: 'Защищает разнообразные лесные местообитания, уникальные в других регионах Польши: ольховые трясины, пойменные леса, бореальные еловые леса и суббореальные грабовые леса.',
+    coordinates: [22.2, 54.3],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/puszczy-rominckiej-pn/800/600',
+    details: {
+      location: 'Варминьско-Мазурское воеводство, Пушча Роминцка',
+      establishmentDate: '2024',
+      area: {
+        park: '70,00 км²',
+        bufferZone: '110,00 км²'
+      },
+      protection: {
+        strict: '20%',
+        active: '60%',
+        landscape: '20%'
+      },
+      symbol: 'Лесной комплекс',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Голдап, Сувалки',
+      nearestTrainStation: 'Голдап',
+      headquarters: 'ул. Лесная 1, 19-500 Голдап',
+      phone: '+48 (87) 615 12 34',
+      website: 'www.puszczy-rominckiej-pn.pl',
+      activities: {
+        hiking: '85 км',
+        cycling: '65 км',
+        educationalTrails: '12 км',
+        other: ['Наблюдение за природой', 'Фотография']
+      },
+      visitRecommendations: 'Парк защищает уникальные лесные местообитания, не встречающиеся в других регионах Польши. Ольховые трясины, пойменные леса, бореальные еловые леса создают уникальный ландшафт. Рекомендуется посетить в любое время года для наблюдения за разнообразием природы.'
+    }
+  },
+  {
+    id: 'jaworski-pn',
+    name: 'Jaworski Park Narodowy',
+    description: 'Защищает малоизменённые леса с крупнейшим польским насаждением дикой рябины, насаждениями тиса обыкновенного и 1/5 национальных видов орхидей.',
+    coordinates: [16.2, 51.0],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/jaworski-pn/800/600',
+    details: {
+      location: 'Нижнесилезское воеводство, окрестности Явора',
+      establishmentDate: '2024',
+      area: {
+        park: '45,00 км²',
+        bufferZone: '70,00 км²'
+      },
+      protection: {
+        strict: '18%',
+        active: '62%',
+        landscape: '20%'
+      },
+      symbol: 'Дикая рябина',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Явор, Легница',
+      nearestTrainStation: 'Явор',
+      headquarters: 'ул. Парковая 1, 59-400 Явор',
+      phone: '+48 (76) 870 12 34',
+      website: 'www.jaworskipn.pl',
+      activities: {
+        hiking: '70 км',
+        cycling: '55 км',
+        educationalTrails: '10 км',
+        other: ['Наблюдение за природой', 'Фотография', 'Ботаника']
+      },
+      visitRecommendations: 'Парк известен крупнейшим польским насаждением дикой рябины, насаждениями тиса обыкновенного и многочисленными видами орхидей. Идеальное место для любителей ботаники. Рекомендуется посетить весной и летом, когда цветут орхидеи.'
+    }
+  },
+  {
+    id: 'wysoczyzny-elblaskiej-pn',
+    name: 'Park Narodowy Wysoczyzny Elbląskiej',
+    description: 'Защищает местность, сформированную ледником: возвышенности, овраги и ущелья, покрытые буковыми лесами и растительностью, характерной для предгорных районов.',
+    coordinates: [19.4, 54.2],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/wysoczyzny-elblaskiej-pn/800/600',
+    details: {
+      location: 'Варминьско-Мазурское воеводство, Эльблонгская возвышенность',
+      establishmentDate: '2024',
+      area: {
+        park: '60,00 км²',
+        bufferZone: '90,00 км²'
+      },
+      protection: {
+        strict: '15%',
+        active: '65%',
+        landscape: '20%'
+      },
+      symbol: 'Буковый лес',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Эльблонг, Фромборк',
+      nearestTrainStation: 'Эльблонг',
+      headquarters: 'ул. Парковая 1, 82-300 Эльблонг',
+      phone: '+48 (55) 555 12 34',
+      website: 'www.wysoczyzny-elblaskiej-pn.pl',
+      activities: {
+        hiking: '75 км',
+        cycling: '60 км',
+        educationalTrails: '10 км',
+        other: ['Наблюдение за природой', 'Фотография']
+      },
+      visitRecommendations: 'Парк защищает местность, сформированную ледником, с возвышенностями, оврагами и ущельями. Буковые леса и предгорная растительность создают живописные виды. Рекомендуется посетить в любое время года, особенно осенью, когда буковые леса меняют цвет.'
+    }
+  },
+  {
+    id: 'bydgoski-pn',
+    name: 'Bydgoski Park Narodowy',
+    description: 'Защищает комплекс внутренних дюн, покрытых сосновым лесом: Пушча Быдгощская, предоставляющая убежище редким видам птиц.',
+    coordinates: [18.0, 53.1],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/bydgoski-pn/800/600',
+    details: {
+      location: 'Куявско-Поморское воеводство, Пушча Быдгощская',
+      establishmentDate: '2024',
+      area: {
+        park: '50,00 км²',
+        bufferZone: '75,00 км²'
+      },
+      protection: {
+        strict: '12%',
+        active: '68%',
+        landscape: '20%'
+      },
+      symbol: 'Сосновый лес',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Быдгощ, Торунь',
+      nearestTrainStation: 'Быдгощ',
+      headquarters: 'ул. Лесная 1, 85-000 Быдгощ',
+      phone: '+48 (52) 555 12 34',
+      website: 'www.bydgoskipn.pl',
+      activities: {
+        hiking: '65 км',
+        cycling: '50 км',
+        educationalTrails: '8 км',
+        other: ['Наблюдение за птицами', 'Наблюдение за природой', 'Фотография']
+      },
+      visitRecommendations: 'Парк защищает комплекс внутренних дюн, покрытых сосновым лесом. Пушча Быдгощская предоставляет убежище редким видам птиц. Парк находится недалеко от Быдгоща, что делает его популярным для однодневных поездок. Рекомендуется посетить в любое время года.'
+    }
+  },
+  {
+    id: 'snieznicki-pn',
+    name: 'Śnieżnicki Park Narodowy',
+    description: 'Защищает, среди прочего, самую высокую вершину восточных Судет со всеми растительными зонами, или Пушчу Снежной Бялки с остатками первобытного леса (реликт бывшего Судетского леса).',
+    coordinates: [16.8, 50.2],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/snieznicki-pn/800/600',
+    details: {
+      location: 'Нижнесилезское воеводство, Восточные Судеты',
+      establishmentDate: '2024',
+      area: {
+        park: '90,00 км²',
+        bufferZone: '130,00 км²'
+      },
+      protection: {
+        strict: '22%',
+        active: '58%',
+        landscape: '20%'
+      },
+      symbol: 'Снежник',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Клодзко, Быстшица-Клодзка',
+      nearestTrainStation: 'Клодзко',
+      headquarters: 'ул. Парковая 1, 57-500 Быстшица-Клодзка',
+      phone: '+48 (74) 555 12 34',
+      website: 'www.snieznickipn.pl',
+      activities: {
+        hiking: '110 км',
+        cycling: 'Ограничено',
+        skiing: 'Лыжные трассы',
+        educationalTrails: '15 км',
+        other: ['Альпинизм', 'Наблюдение за природой', 'Фотография']
+      },
+      visitRecommendations: 'Парк защищает самую высокую вершину восточных Судет со всеми растительными зонами. Пушча Снежной Бялки с остатками первобытного леса создаёт уникальный ландшафт. Рекомендуется посетить летом и ранней осенью для пеших прогулок, зимой - для лыжного спорта.'
+    }
+  },
+  {
+    id: 'odrzanski-pn',
+    name: 'Odrzański Park Narodowy',
+    description: 'Защищает "Ленги Оджаньске", то есть реку и заболоченные леса, растущие вдоль её берегов в среднем течении Одры между Бжегом-Дольным и Глогувом.',
+    coordinates: [16.2, 51.3],
+    category: 'park narodowy',
+    image: 'https://picsum.photos/seed/odrzanski-pn/800/600',
+    details: {
+      location: 'Нижнесилезское и Любуское воеводство, долина Одры',
+      establishmentDate: '2024',
+      area: {
+        park: '105,00 км²',
+        bufferZone: '150,00 км²'
+      },
+      protection: {
+        strict: '10%',
+        active: '70%',
+        landscape: '20%'
+      },
+      protectionPrograms: ['Рамсарская конвенция'],
+      symbol: 'Река Одра',
+      tickets: 'Вход платный, билеты в кассах парка',
+      nearestCity: 'Глогув, Бжег-Дольны',
+      nearestTrainStation: 'Глогув',
+      headquarters: 'ул. Одржаньска 1, 67-200 Глогув',
+      phone: '+48 (76) 555 12 34',
+      website: 'www.odrzanski-pn.pl',
+      activities: {
+        hiking: '120 км',
+        cycling: '90 км',
+        educationalTrails: '14 км',
+        other: ['Каякинг по Одре', 'Наблюдение за птицами', 'Рыбалка']
+      },
+      visitRecommendations: 'Парк защищает "Ленги Оджаньске" - реку и заболоченные леса в среднем течении Одры. Важное место для многих видов птиц и водных животных. Рекомендуется посетить в сезон миграции птиц (весна и осень). Идеальное место для каякинга и наблюдения за природой.'
+    }
+  },
 ];

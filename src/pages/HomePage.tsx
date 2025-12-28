@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Trophy, Heart, Sparkles, Gift } from 'lucide-react';
+import { parks } from '../data/parks';
 
 const HomePage = () => {
   return (
@@ -105,7 +106,7 @@ const HomePage = () => {
           {/* Quick Stats Preview */}
           <div className="mt-8 grid grid-cols-2 gap-4">
             <div className="bg-cream-50 rounded-lg p-4 text-center border border-earth-200">
-              <div className="text-3xl font-bold text-forest-700">24</div>
+              <div className="text-3xl font-bold text-forest-700">{parks.length}</div>
               <div className="text-sm text-earth-600 mt-1">Parks to Explore</div>
             </div>
             <div className="bg-cream-50 rounded-lg p-4 text-center border border-earth-200">

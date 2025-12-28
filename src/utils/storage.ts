@@ -8,23 +8,39 @@ const CHALLENGES_KEY = 'map-of-love-challenges';
 // Initialize visited locations from parks data
 export const initializeVisitedLocations = (): VisitedLocationsData => {
   const stored = localStorage.getItem(VISITED_LOCATIONS_KEY);
+  let existing: VisitedLocationsData = {};
+  
   if (stored) {
-    return JSON.parse(stored);
+    existing = JSON.parse(stored);
   }
   
-  const initial: VisitedLocationsData = {};
+  // Merge new parks into existing data
+  const updated: VisitedLocationsData = { ...existing };
   parks.forEach(park => {
-    initial[park.id] = {
-      name: park.name,
-      visited: false,
-      visitDate: '',
-      notes: '',
-      coordinates: park.coordinates,
-    };
+    if (!updated[park.id]) {
+      // Add new parks that don't exist in storage
+      updated[park.id] = {
+        name: park.name,
+        visited: false,
+        visitDate: '',
+        notes: '',
+        coordinates: park.coordinates,
+      };
+    } else {
+      // Update coordinates if they changed
+      updated[park.id].coordinates = park.coordinates;
+    }
   });
   
-  localStorage.setItem(VISITED_LOCATIONS_KEY, JSON.stringify(initial));
-  return initial;
+  // Remove parks that no longer exist in the parks array
+  Object.keys(updated).forEach(id => {
+    if (!parks.find(p => p.id === id)) {
+      delete updated[id];
+    }
+  });
+  
+  localStorage.setItem(VISITED_LOCATIONS_KEY, JSON.stringify(updated));
+  return updated;
 };
 
 // Initialize challenges from challenges data
@@ -56,11 +72,8 @@ export const initializeChallenges = (): ChallengesData => {
 
 // Get visited locations
 export const getVisitedLocations = (): VisitedLocationsData => {
-  const stored = localStorage.getItem(VISITED_LOCATIONS_KEY);
-  if (!stored) {
-    return initializeVisitedLocations();
-  }
-  return JSON.parse(stored);
+  // Always initialize to ensure new parks are added to storage
+  return initializeVisitedLocations();
 };
 
 // Get challenges
@@ -105,9 +118,9 @@ export const getStats = () => {
   const challenges = getChallenges();
   
   const visitedCount = Object.values(locations).filter(loc => loc.visited).length;
-  const totalParks = Object.keys(locations).length;
+  const totalParks = parks.length; // Use actual parks array length
   const completedChallenges = Object.values(challenges).filter(ch => ch.completed).length;
-  const totalChallenges = Object.keys(challenges).length;
+  const totalChallenges = challenges.length; // Use actual challenges array length
   
   return {
     visitedParks: visitedCount,
